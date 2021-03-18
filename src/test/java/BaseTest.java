@@ -24,13 +24,15 @@ public class BaseTest {
     }
 
 
-    @BeforeTest(alwaysRun = true)
+    //    @BeforeTest(alwaysRun = true)
+    @BeforeClass(alwaysRun = true)
     public void beforeTest(XmlTest xmlTest) {
         System.out.println("Initialization browser before [" + xmlTest.getName() + "] test from XML");
         DriverFactory.initDriver();
     }
 
-    @AfterTest(alwaysRun = true)
+    //    @AfterTest(alwaysRun = true)
+    @AfterClass(alwaysRun = true)
     public void afterTest(XmlTest xmlTest) {
         System.out.println("Closing browser after [" + xmlTest.getName() + "] test from XML");
         DriverFactory.closeDriver();
