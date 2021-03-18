@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Left menu suite">
+    <test name="Open top 2 left menu item">
+        <classes>
+            <class name="FirstTestClass">
+                <methods>
+                    <include name="firstTest"/>
+                    <include name="secondTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Open last 3 left menu item">
+        <classes>
+            <class name="FirstTestClass">
+                <methods>
+                    <include name="thirdTest"/>
+                    <include name="fourthTest"/>
+                    <include name="fifthTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
