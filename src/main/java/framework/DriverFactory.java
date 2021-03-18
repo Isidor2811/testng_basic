@@ -1,6 +1,7 @@
 package framework;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -11,6 +12,7 @@ public class DriverFactory {
     public static void initDriver() {
         WebDriverManager.chromedriver().setup();
         WebDriver webDriver = new ChromeDriver();
+        webDriver.manage().window().setPosition(new Point(0, -900));
         webDriver.manage().window().maximize();
         driver.set(webDriver);
     }

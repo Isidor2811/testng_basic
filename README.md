@@ -23,3 +23,15 @@ Commit #2 (work with groups)
 @BeforeGroups, @AfterGroups, в параметры этих аннотаций нужно передавать название групп перед и после которых они должны срабатывать
 
 Тут как то непонятно работают пред идущие методы (@BeforeSuite, @BeforeMethod), работает только @BeforeTest, так как в нем есть параметр alwaysRun=true
+
+
+Commit #3 (work with parallel tests)
+
+Добавлен новый файл testng_with_test_parallelization.xml
+В данном файле есть два теста, в каждом из которых по пару методов с разных классов.
+Параллелизация стоит по тестах. 
+Нужно обратить внимание, что браузер в данном случае тоже должен запускаться перед тестом @BeforeTest
+
+Тесты будут запущены в 2 потока (thread-count="2")
+
+https://testng.org/doc/documentation-main.html#parallel-running

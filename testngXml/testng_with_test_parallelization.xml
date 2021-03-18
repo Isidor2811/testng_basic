@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite with parallelization" parallel="tests" thread-count="2">
+    <test name="Tests parallelization">
+        <classes>
+            <class name="FirstTestClass">
+                <methods>
+                    <include name="firstTest"/>
+                    <include name="secondTest"/>
+                    <include name="thirdTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Test #2">
+        <classes>
+            <class name="SecondTestClass">
+                <methods>
+                    <include name="thirdTest"/>
+                    <include name="fourthTest"/>
+                    <include name="fifthTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
