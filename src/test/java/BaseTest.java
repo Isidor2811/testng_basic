@@ -5,6 +5,7 @@ import org.testng.annotations.*;
 import org.testng.xml.XmlTest;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 public class BaseTest {
 
@@ -44,6 +45,18 @@ public class BaseTest {
     @AfterMethod
     public void afterEachTestMethod(Method method) {
         System.out.println("Method [" + method.getName() + "] was run on thread with id #" + Thread.currentThread().getId());
+    }
+
+    @BeforeGroups(groups = {"Fast", "Super Fast"})
+    public void beforeGroups(ITestContext context) {
+        String[] includedGroups = context.getIncludedGroups();
+        System.out.println("Following group was include to run: " + Arrays.toString(includedGroups));
+    }
+
+    @AfterGroups(groups = {"Fast", "Super Fast"})
+    public void afterGroups(ITestContext context) {
+        String[] excludedGroups = context.getExcludedGroups();
+        System.out.println("Following group was excluded from: " + Arrays.toString(excludedGroups));
     }
 
 }

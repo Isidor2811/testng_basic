@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite with groups">
+    <test name="Test #1">
+        <groups>
+            <run>
+                <include name="Fast"/>
+                <include name="Super Fast"/>
+                <exclude name="Slow"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="FirstTestClass"/>
+        </classes>
+    </test>
+</suite>
